@@ -330,7 +330,7 @@ const Home = () => {
                       EPAM Systems
                     </h4>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                      development of enterprise-scale web applications. Architected serverless and microservices
+                      Development of enterprise-scale web applications. Architected serverless and microservices
                       infrastructure.
                     </p>
                     <div className="flex flex-wrap gap-2">
