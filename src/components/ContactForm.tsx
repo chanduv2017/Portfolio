@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Github, Linkedin, Twitter, Download, Send, Mail, Youtube } from "lucide-react";
+import { Instagram,Github, Linkedin, Twitter, Download, Send, Mail, Youtube } from "lucide-react";
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -68,6 +68,11 @@ const ContactForm = () => {
   };
 
   const socialLinks = [
+    {
+      icon: <Instagram className="h-5 w-5" />,
+      label: "Instagram",
+      href: "https://www.instagram.com/_chandu_v2.2/",
+    },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",

@@ -205,7 +205,7 @@ const Home = () => {
             </div>
 
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold mb-4">John Doe</h3>
+              <h3 className="text-2xl font-semibold mb-4">Chandra Sekhar Vattem</h3>
               <p className="text-lg mb-6 text-muted-foreground">
                 I'm a full-stack developer with experience in
                 building web applications. I specialize in creating
