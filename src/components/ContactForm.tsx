@@ -56,7 +56,20 @@ const ContactForm = () => {
 
     try {
       // Simulate API call with timeout
-      await new Promise((resolve) => setTimeout(resolve, 1500));
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyNPXVeZMneui6XRYO6Hyi3o3o3OKWkVzruknsCC8vGWbL5Bmfqt53Xb-_br9XHwb6B3w/exec'
+
+      // Create FormData and append fields manually
+      const formData = new FormData();
+      formData.append('name', data.name);
+      formData.append('email', data.email);
+      formData.append('message', data.message);
+
+      await fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => console.log('Success!', response))
+        .catch(error => console.error('Error!', error.message))
+      
+
+      // await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log("Form submitted:", data);
       setIsSuccess(true);
       form.reset();
@@ -172,6 +185,7 @@ const ContactForm = () => {
                 <form
                   onSubmit={form.handleSubmit(onSubmit)}
                   className="space-y-4"
+                  name="submit-to-google-sheet"
                 >
                   <FormField
                     control={form.control}
