@@ -3,7 +3,16 @@ import { motion } from "framer-motion";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Instagram,Github, Linkedin, Twitter, Download, Send, Mail, Youtube } from "lucide-react";
+import {
+  Instagram,
+  Github,
+  Linkedin,
+  Twitter,
+  Download,
+  Send,
+  Mail,
+  Youtube,
+} from "lucide-react";
 
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
@@ -56,18 +65,18 @@ const ContactForm = () => {
 
     try {
       // Simulate API call with timeout
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbyNPXVeZMneui6XRYO6Hyi3o3o3OKWkVzruknsCC8vGWbL5Bmfqt53Xb-_br9XHwb6B3w/exec'
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbyNPXVeZMneui6XRYO6Hyi3o3o3OKWkVzruknsCC8vGWbL5Bmfqt53Xb-_br9XHwb6B3w/exec";
 
       // Create FormData and append fields manually
       const formData = new FormData();
-      formData.append('name', data.name);
-      formData.append('email', data.email);
-      formData.append('message', data.message);
+      formData.append("name", data.name);
+      formData.append("email", data.email);
+      formData.append("message", data.message);
 
-      await fetch(scriptURL, { method: 'POST', body: formData })
-        .then(response => console.log('Success!', response))
-        .catch(error => console.error('Error!', error.message))
-      
+      await fetch(scriptURL, { method: "POST", body: formData })
+        .then((response) => console.log("Success!", response))
+        .catch((error) => console.error("Error!", error.message));
 
       // await new Promise((resolve) => setTimeout(resolve, 1500));
       console.log("Form submitted:", data);
@@ -84,27 +93,27 @@ const ContactForm = () => {
     {
       icon: <Instagram className="h-5 w-5" />,
       label: "Instagram",
-      href: "https://www.instagram.com/_chandu_v2.2/",
+      href: import.meta.env.VITE_INSTAGRAM,
     },
     {
       icon: <Github className="h-5 w-5" />,
       label: "GitHub",
-      href: "https://github.com/chanduv2017",
+      href: import.meta.env.VITE_GITHUB,
     },
     {
       icon: <Linkedin className="h-5 w-5" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/chandrasekharvattem/",
+      href: import.meta.env.VITE_LINKEDIN,
     },
     {
       icon: <Youtube className="h-5 w-5" />,
       label: "Youtube",
-      href: "https://www.youtube.com/@chandugamer28",
+      href: import.meta.env.VITE_YOUTUBE,
     },
     {
       icon: <Mail className="h-5 w-5" />,
       label: "Email",
-      href: "mailto:chandrasekharvattem@gmail.com",
+      href: "mailto:" + import.meta.env.VITE_EMAIL,
     },
   ];
 
@@ -156,7 +165,7 @@ const ContactForm = () => {
 
               <div className="pt-4">
                 <a
-                  href="/resume.pdf"
+                  href={import.meta.env.VITE_RESUME}
                   download
                   className="w-full flex items-center justify-center space-x-2 border rounded-md px-4 py-2 text-sm font-medium transition-colors bg-background hover:bg-muted border-input text-foreground hover:text-primary"
                 >

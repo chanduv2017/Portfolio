@@ -21,7 +21,7 @@ const Home = () => {
     { name: "TypeScript", color: "bg-blue-100 text-blue-800" },
     { name: "Node.js", color: "bg-green-100 text-green-800" },
     { name: "Express.js", color: "bg-green-100 text-green-800" },
-    
+
     { name: "Docker", color: "bg-sky-100 text-sky-800" },
     { name: "Kubernetes", color: "bg-sky-100 text-sky-800" },
     { name: "Java", color: "bg-red-100 text-red-800" },
@@ -42,11 +42,16 @@ const Home = () => {
       title: "MenuMagic",
       description:
         "A full-stack Restaurant application built with React, Node.js, and MongoDB",
-      image:
-        "projectImg/MenuMagic.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express","TypeScript"],
+      image: "projectImg/MenuMagic.png",
+      technologies: [
+        "React",
+        "Tailwind",
+        "MongoDB",
+        "Express.js",
+        "TypeScript",
+      ],
       liveDemo: "",
-      github: "https://github.com/chanduv2017/MenuMagic-Frontend",
+      github: import.meta.env.VITE_GITHUB + "/MenuMagic-Frontend",
       fullDescription:
         "A full-featured food ordering application with user authentication, restaurant and menu browsing, real-time cart updates, secure checkout, and order tracking. Developed using React for the frontend, Node.js and Express for the backend API, and MongoDB for persistent data storage. Integrates payment gateways for seamless transactions and supports role-based access for customers, restaurant owners, and administrators.",
     },
@@ -55,23 +60,38 @@ const Home = () => {
       title: "LinguaLink",
       description:
         "A full stack web application for multilingual voice and text translation",
-      image:
-        "projectImg/LinguaLink.png",
-      technologies: ["React", "Node.js", "MongoDB", "Express","TypeScript", "LLM","Flask"],
+      image: "projectImg/LinguaLink.png",
+      technologies: [
+        "React",
+        "Tailwind",
+        "MongoDB",
+        "Express.js",
+        "TypeScript",
+        "LLM",
+        "Flask",
+      ],
       liveDemo: "",
-      github: "https://github.com/chanduv2017/LinguaLink-Frontend",
+      github: import.meta.env.VITE_GITHUB + "/LinguaLink-Frontend",
       fullDescription:
         "LinguaLink is an innovative web application built using modern technologies like React, TypeScript, Node.js, MongoDB, and large language models (LLMs). The platform offers seamless voice and text translation services across up to four languages, making it an essential tool for cross-lingual communication. Users can interact with LinguaLink to either speak or type in one language and receive translations in their preferred output language, whether for personal, educational, or professional use.",
     },
     {
       id: 3,
       title: "Horizon",
-      description: "A modern, scalable blog platform with a focus on performance and aesthetics",
-      image:
-        "projectImg/Horizon.png",
-      technologies: ["React", "Node.js", "MongoDB", "TypeScript", "postgreSQL", "Prisma", "Hono"],
+      description:
+        "A modern, scalable blog platform with a focus on performance and aesthetics",
+      image: "projectImg/Horizon.png",
+      technologies: [
+        "React",
+        "Tailwind",
+        "Node.js",
+        "TypeScript",
+        "postgreSQL",
+        "Prisma",
+        "Hono",
+      ],
       liveDemo: "https://horizon-frontend-ten.vercel.app/",
-      github: "https://github.com/chanduv2017/Horizonfrontend",
+      github: import.meta.env.VITE_GITHUB + "/Horizon-Frontend",
       fullDescription:
         "Horizon is a modern, scalable blog platform designed to provide users with a seamless content creation and reading experience. Built using a robust tech stack that includes React, Tailwind CSS, Cloudflare Workers, Hono web framework, Prisma ORM, PostgreSQL, and Node.js, Horizon focuses on delivering high performance, scalability, and aesthetic appeal.",
     },
@@ -170,7 +190,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <section id="hero" className="min-h-screen">
-        <HeroSection onCTAClick={() => scrollToSection("projects")} />
+        <HeroSection onViewWorkClick={() => scrollToSection("projects")} />
       </section>
 
       {/* About Section */}
@@ -205,13 +225,15 @@ const Home = () => {
             </div>
 
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold mb-4">Chandra Sekhar Vattem</h3>
+              <h3 className="text-2xl font-semibold mb-4">
+                Chandra Sekhar Vattem
+              </h3>
               <p className="text-lg mb-6 text-muted-foreground">
-                I'm a full-stack developer with experience in
-                building web applications. I specialize in creating
-                scalable, high-performance solutions using modern technologies.
-                My background includes work in e-commerce and
-                AI-driven applications.
+                I'm a full-stack developer with experience in building web
+                applications. I specialize in creating scalable,
+                high-performance solutions using modern technologies. My
+                background includes work in e-commerce and AI-driven
+                applications.
               </p>
               <p className="text-lg mb-6 text-muted-foreground">
                 I'm passionate about clean code, user experience, and staying on
@@ -244,7 +266,9 @@ const Home = () => {
                 <Button
                   variant="outline"
                   className="flex items-center gap-2"
-                  onClick={() => window.open("/resume.pdf", "_blank")}
+                  onClick={() =>
+                    window.open(import.meta.env.VITE_RESUME, "_blank")
+                  }
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -330,21 +354,26 @@ const Home = () => {
                       EPAM Systems
                     </h4>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                      Development of enterprise-scale web applications. Architected serverless and microservices
-                      infrastructure.
+                      Development of enterprise-scale web applications.
+                      Architected serverless and microservices infrastructure.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["React", "Node.js", "TypeScript", "AWS","Tailwind","Kubernetes"].map(
-                        (tech, index) => (
-                          <Badge
-                            key={index}
-                            variant="secondary"
-                            className="text-xs"
-                          >
-                            {tech}
-                          </Badge>
-                        ),
-                      )}
+                      {[
+                        "React",
+                        "Node.js",
+                        "TypeScript",
+                        "AWS",
+                        "Tailwind",
+                        "Kubernetes",
+                      ].map((tech, index) => (
+                        <Badge
+                          key={index}
+                          variant="secondary"
+                          className="text-xs"
+                        >
+                          {tech}
+                        </Badge>
+                      ))}
                     </div>
                   </motion.div>
                 </div>
@@ -381,17 +410,19 @@ const Home = () => {
                     className="bg-card/80 backdrop-blur-sm border-2 border-primary/20 rounded-2xl p-6 shadow-xl hover:border-primary/40 transition-all duration-300"
                   >
                     <h3 className="text-xl font-bold text-primary mb-2">
-                      Part-time Youtuber
+                      Content Creator
                     </h3>
                     <h4 className="text-lg font-semibold text-foreground mb-3">
                       Youtube
                     </h4>
                     <p className="text-muted-foreground mb-4 leading-relaxed text-sm">
-                      Produced mobile gaming and tech content, building a community of over 8,000 followers and achieving 2 million views. 
-                      Gained hands-on experience in video editing, production, and audience engagement.
+                      Produced mobile gaming and tech content, building a
+                      community of over 8,000 followers and achieving 2 million
+                      views. Gained hands-on experience in video editing,
+                      production, and audience engagement.
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {["Kinemaster", "Filmora", "Photoshop"].map(
+                      {["Filmora", "Photoshop", "Kinemaster"].map(
                         (tech, index) => (
                           <Badge
                             key={index}
@@ -400,7 +431,7 @@ const Home = () => {
                           >
                             {tech}
                           </Badge>
-                        ),
+                        )
                       )}
                     </div>
                   </motion.div>
@@ -464,7 +495,7 @@ const Home = () => {
             </div>
 
             {/* Timeline Dots */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 top-32">
+            {/* <div className="absolute left-1/2 transform -translate-x-1/2 top-32">
               <div className="w-4 h-4 bg-primary rounded-full shadow-lg border-4 border-background"></div>
             </div>
             <div className="absolute left-1/2 transform -translate-x-1/2 top-80">
@@ -472,7 +503,7 @@ const Home = () => {
             </div>
             <div className="absolute left-1/2 transform -translate-x-1/2 bottom-32">
               <div className="w-4 h-4 bg-primary rounded-full shadow-lg border-4 border-background"></div>
-            </div>
+            </div> */}
           </div>
 
           {/* Mobile Timeline - Stacked Layout */}
@@ -484,7 +515,14 @@ const Home = () => {
                 company: "EPAM Systems",
                 description:
                   "development of enterprise-scale web applications. Architected serverless and microservices infrastructure.",
-                technologies: ["React", "Node.js", "TypeScript", "AWS","Tailwind","Kubernetes"],
+                technologies: [
+                  "React",
+                  "Node.js",
+                  "TypeScript",
+                  "AWS",
+                  "Tailwind",
+                  "Kubernetes",
+                ],
               },
               {
                 year: "2017",
@@ -493,7 +531,7 @@ const Home = () => {
                 description:
                   "Produced mobile gaming and tech content, building a community of over 8,000 followers and achieving 2 million views. Gained hands-on experience in video editing, production, and audience engagement.",
                 technologies: ["Kinemaster", "Filmora", "Photoshop"],
-              }
+              },
             ].map((item, index) => (
               <motion.div
                 key={index}
@@ -626,17 +664,21 @@ const Home = () => {
 
           <div className="flex space-x-6">
             {[
-              { href: "https://github.com/chanduv2017", icon: "github", label: "GitHub" },
               {
-                href: "https://linkedin.com/in/chandrasekharvattem",
+                href: import.meta.env.VITE_GITHUB,
+                icon: "github",
+                label: "GitHub",
+              },
+              {
+                href: import.meta.env.VITE_LINKEDIN,
                 icon: "linkedin",
                 label: "LinkedIn",
               },
-              {
-                href: "https://twitter.com",
-                icon: "twitter",
-                label: "Twitter",
-              },
+              // {
+              //   href: "https://twitter.com",
+              //   icon: "twitter",
+              //   label: "Twitter",
+              // },
             ].map((social, index) => (
               <motion.a
                 key={social.icon}
