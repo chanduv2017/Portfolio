@@ -31,8 +31,8 @@ const HeroSection = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Hi, I'm <span className="text-primary">{name}</span>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
+              Hi, I'm <span className="text-primary hover-target">{name}</span>
             </h1>
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               {tagline}

@@ -225,7 +225,7 @@ const Home = () => {
             </div>
 
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold mb-4">
+              <h3 className="text-2xl font-semibold mb-4 hover-target">
                 Chandra Sekhar Vattem
               </h3>
               <p className="text-lg mb-6 text-muted-foreground">
@@ -253,7 +253,7 @@ const Home = () => {
                     >
                       <Badge
                         variant="secondary"
-                        className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-pointer shadow-sm"
+                        className="px-4 py-2 text-sm font-medium hover:bg-primary hover:text-primary-foreground transition-colors shadow-sm"
                       >
                         {skill.name}
                       </Badge>
@@ -526,7 +526,7 @@ const Home = () => {
               },
               {
                 year: "2017",
-                title: "Part-time Youtuber",
+                title: "Content Creator",
                 company: "Youtube",
                 description:
                   "Produced mobile gaming and tech content, building a community of over 8,000 followers and achieving 2 million views. Gained hands-on experience in video editing, production, and audience engagement.",

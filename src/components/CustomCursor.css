@@ -1,0 +1,21 @@
+.cursor {
+  pointer-events: none;
+  position: fixed;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  mix-blend-mode:difference;
+  
+  transform: translate(-50%, -50%);
+  transition: transform 0.2s ease, scale 0.2s ease;
+  z-index: 9999;
+}
+
+.cursor--scale {
+  transform: translate(-50%, -50%) scale(5);
+}
+
+html, body {
+  cursor: none !important;
+}
