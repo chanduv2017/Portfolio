@@ -1,8 +1,8 @@
 .cursor {
   pointer-events: none;
   position: fixed;
-  width: 15px;
-  height: 15px;
+  width: 10px;
+  height: 10px;
   background-color: rgb(255, 255, 255);
   border-radius: 50%;
   mix-blend-mode:difference;
@@ -13,7 +13,7 @@
 }
 
 .cursor--scale {
-  transform: translate(-50%, -50%) scale(5);
+  transform: translate(-50%, -50%) scale(15);
 }
 
 html, body {
