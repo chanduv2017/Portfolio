@@ -7,8 +7,9 @@ import ContactForm from "./ContactForm";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator";
 import { useTheme } from "../contexts/ThemeContext";
+import BackToTopButton from "./BackToTopButton";
+
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("hero");
@@ -187,7 +188,7 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-background text-foreground transition-colors duration-300">
       <Navbar />
-
+      
       {/* Hero Section */}
       <section id="hero" className="min-h-screen">
         <HeroSection onViewWorkClick={() => scrollToSection("projects")} />
@@ -657,7 +658,7 @@ const Home = () => {
       <footer className="py-12 px-4 border-t bg-muted/20 dark:bg-muted/5 transition-colors duration-300">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center">
           <div className="mb-4 md:mb-0">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-sm text-muted-foreground hover-target">
               © {new Date().getFullYear()} Chandu. All rights reserved.
             </p>
           </div>
@@ -734,6 +735,7 @@ const Home = () => {
           </div>
         </div>
       </footer>
+      <BackToTopButton />
     </div>
   );
 };

@@ -18,7 +18,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer"
 import { ExternalLink, Github, X } from "lucide-react";
+import { useMediaQuery } from "@/hooks/use-media-query";
 
 interface ProjectCardProps {
   title: string;
@@ -40,6 +51,7 @@ const ProjectCard = ({
   fullDescription = "This is a detailed description of the project. It includes information about the problem solved, approach taken, technologies used, challenges faced, and outcomes achieved. The project demonstrates skills in frontend development, responsive design, and modern web technologies.",
 }: ProjectCardProps) => {
   const [isOpen, setIsOpen] = useState(false);
+  const isDesktop = useMediaQuery("(min-width: 768px)");
 
   return (
     <div className="bg-background">
@@ -79,7 +91,8 @@ const ProjectCard = ({
           </CardContent>
 
           <CardFooter className="pt-0">
-            <Dialog open={isOpen} onOpenChange={setIsOpen}>
+            {isDesktop ? 
+            (<Dialog open={isOpen} onOpenChange={setIsOpen}>
               <DialogTrigger asChild>
                 <Button
                   variant="default"
@@ -160,7 +173,89 @@ const ProjectCard = ({
                   </div>
                 </div>
               </DialogContent>
-            </Dialog>
+            </Dialog>) : 
+            (
+            <Drawer open={isOpen} onOpenChange={setIsOpen}>
+      <DrawerTrigger asChild>
+        <Button
+                  variant="default"
+                  className="w-full shadow-md hover:shadow-lg transition-all duration-300"
+                >
+                  View Details
+                </Button>
+      </DrawerTrigger>
+      <DrawerContent className="sm:max-w-[700px] max-h-[90vh] ">
+        <DrawerHeader >
+          <DrawerTitle className="text-2xl font-bold">{title}</DrawerTitle>
+          <DrawerDescription className="text-muted-foreground">
+            {description}
+          </DrawerDescription>
+        </DrawerHeader>
+        
+        <div className="mt-4 overflow-y-auto">
+                  <img
+                    src={thumbnail}
+                    alt={title}
+                    className="w-full h-64 object-cover rounded-md mb-6"
+                  />
+
+                  <h3 className="text-lg font-semibold mb-2">
+                    Project Overview
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {fullDescription}
+                  </p>
+
+                  <h3 className="text-lg font-semibold mb-2">
+                    Technologies Used
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-6">
+                    {technologies.map((tech, index) => (
+                      <Badge key={index} variant="outline" className="text-sm">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
+
+                  <div className="flex flex-wrap gap-4 mt-6">
+                    {demoLink && (
+                      <Button asChild>
+                        <a
+                          href={demoLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <ExternalLink className="mr-2 h-4 w-4" />
+                          Live Demo
+                        </a>
+                      </Button>
+                    )}
+                    {githubLink && (
+                      <Button variant="outline" asChild>
+                        <a
+                          href={githubLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Github className="mr-2 h-4 w-4" />
+                          View Code
+                        </a>
+                      </Button>
+                    )}
+                    <Button
+                      variant="ghost"
+                      size="icon"
+                      className="ml-auto"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <X className="h-4 w-4" />
+                      <span className="sr-only">Close</span>
+                    </Button>
+                  </div>
+                </div>
+      </DrawerContent>
+    </Drawer>)}
+
           </CardFooter>
         </Card>
       </motion.div>

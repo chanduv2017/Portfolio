@@ -5,6 +5,10 @@ const CustomCursor: React.FC = () => {
   const cursorRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
+
+    const isMouse = window.matchMedia("(pointer: fine)").matches;
+    if (!isMouse) return;
+
     const cursor = cursorRef.current;
     const moveCursor = (e: MouseEvent) => {
       if (cursor) {
@@ -30,6 +34,7 @@ const CustomCursor: React.FC = () => {
     });
 
     return () => {
+      if (!isMouse) return; 
       window.removeEventListener("mousemove", moveCursor);
       hoverables.forEach((el) => {
         el.removeEventListener("mouseenter", handleMouseEnter);

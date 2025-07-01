@@ -64,17 +64,13 @@ const ContactForm = () => {
     setError(null);
 
     try {
-      // Simulate API call with timeout
-      const scriptURL =
-        "https://script.google.com/macros/s/AKfycbyNPXVeZMneui6XRYO6Hyi3o3o3OKWkVzruknsCC8vGWbL5Bmfqt53Xb-_br9XHwb6B3w/exec";
-
       // Create FormData and append fields manually
       const formData = new FormData();
       formData.append("name", data.name);
       formData.append("email", data.email);
       formData.append("message", data.message);
 
-      await fetch(scriptURL, { method: "POST", body: formData })
+      await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, { method: "POST", body: formData })
         .then((response) => console.log("Success!", response))
         .catch((error) => console.error("Error!", error.message));
 

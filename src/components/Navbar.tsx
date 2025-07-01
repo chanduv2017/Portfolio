@@ -46,12 +46,12 @@ const Navbar = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <a
-            href="#"
+            <NavLink
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="text-foreground hover:text-primary transition-colors"
-          >
+            >
             Chandu
-          </a>
+            </NavLink>
         </motion.div>
 
         {/* Desktop Navigation */}
@@ -126,12 +126,13 @@ const Navbar = () => {
 interface NavLinkProps {
   children: React.ReactNode;
   onClick: () => void;
+  className?: string;
 }
 
-const NavLink = ({ children, onClick }: NavLinkProps) => (
+const NavLink = ({ children, onClick, className }: NavLinkProps) => (
   <motion.a
     href="#"
-    className="text-foreground hover:text-primary transition-colors font-medium"
+    className={`text-foreground hover:text-primary transition-colors font-medium${className ? ` ${className}` : ""}`}
     onClick={(e) => {
       e.preventDefault();
       onClick();

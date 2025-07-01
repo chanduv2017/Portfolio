@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import { ArrowDownIcon } from "lucide-react";
+import { TypewriterIntro } from "./TypeWriterIntro";
 
 interface HeroSectionProps {
   name?: string;
@@ -32,9 +33,10 @@ const HeroSection = ({
             transition={{ duration: 0.6 }}
           >
             <div className="hover-target m-0 p-0">
-              <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
+              <TypewriterIntro name={name}/>
+              {/* <h1 className="text-4xl md:text-6xl font-bold mb-4 ">
               Hi, I'm <span className="text-primary ">{name}</span>
-            </h1>
+              </h1> */}
             <p className="text-xl md:text-2xl text-muted-foreground mb-8">
               {tagline}
             </p>
