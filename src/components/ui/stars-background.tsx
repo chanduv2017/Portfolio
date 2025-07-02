@@ -1,4 +1,5 @@
 "use client";
+import { useTheme } from "@/contexts/ThemeContext";
 import { cn } from "@/lib/utils";
 import React, {
   useState,
@@ -99,7 +100,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     maxTwinkleSpeed,
     generateStars,
   ]);
-
+  const { theme, toggleTheme } = useTheme();
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
@@ -114,7 +115,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
       stars.forEach((star) => {
         ctx.beginPath();
         ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 255, 255, ${star.opacity})`;
+        ctx.fillStyle = `rgba(${theme=="dark"?"255,255,255":"0,0,0"}, ${star.opacity})`;
         ctx.fill();
 
         if (star.twinkleSpeed !== null) {
@@ -132,7 +133,7 @@ export const StarsBackground: React.FC<StarBackgroundProps> = ({
     return () => {
       cancelAnimationFrame(animationFrameId);
     };
-  }, [stars]);
+  }, [stars,theme]);
 
   return (
     <canvas
