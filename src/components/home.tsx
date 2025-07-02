@@ -12,6 +12,7 @@ import BackToTopButton from "./BackToTopButton";
 import { ShootingStars } from "./ui/shooting-stars";
 import { StarsBackground } from "./ui/stars-background";
 import { Github, Instagram, Linkedin } from "lucide-react";
+import { BackgroundBeams } from "./ui/background-beams";
 
 
 const Home = () => {
@@ -715,8 +716,9 @@ const Home = () => {
         </div>
       </footer>
       <BackToTopButton />
-      <ShootingStars className="z-[-1]"/>
+      {/* <ShootingStars className="z-[-1]"/> */}
       <StarsBackground className="z-[-1]"/>
+      <BackgroundBeams className="z-[-1]"/>
     </div>
   );
 };
