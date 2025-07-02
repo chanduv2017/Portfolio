@@ -70,7 +70,10 @@ const ContactForm = () => {
       formData.append("email", data.email);
       formData.append("message", data.message);
 
-      await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, { method: "POST", body: formData })
+      await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        body: formData,
+      })
         .then((response) => console.log("Success!", response))
         .catch((error) => console.error("Error!", error.message));
 

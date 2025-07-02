@@ -23,7 +23,7 @@ const HeroSection = ({
   },
 }: HeroSectionProps) => {
   return (
-    <section className="min-h-screen flex flex-col justify-center items-center px-4 py-20 bg-gradient-to-br from-background via-background to-muted/20 dark:to-muted/10 transition-colors duration-300">
+    <section className="min-h-screen flex flex-col justify-center items-center px-4 py-20  ">
       <div className="container mx-auto max-w-6xl">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
           <motion.div

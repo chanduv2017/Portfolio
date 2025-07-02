@@ -43,7 +43,7 @@ const CustomCursor: React.FC = () => {
     };
   }, []);
 
-  return <div className="cursor" ref={cursorRef} />;
+  return <div className="cursor dark:bg-white" ref={cursorRef} />;
 };
 
 export default CustomCursor;
