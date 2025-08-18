@@ -13,6 +13,7 @@ import { ShootingStars } from "./ui/shooting-stars";
 import { StarsBackground } from "./ui/stars-background";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import { BackgroundBeams } from "./ui/background-beams";
+import { FlipWords } from "./ui/flip-words";
 
 
 const Home = () => {
@@ -230,9 +231,11 @@ const Home = () => {
             </div>
 
             <div className="md:col-span-2">
-              <h3 className="text-2xl font-semibold mb-4 hover-target">
+              {/* <h3 className="text-2xl font-semibold mb-4 hover-target">
                 Chandra Sekhar Vattem
-              </h3>
+              </h3> */}
+              {/* <Cover className="text-2xl font-semibold ">Chandra Sekhar Vattem</Cover> */}
+              <FlipWords words={["Chandra Sekhar Vattem", "Chandu"]} className="text-2xl font-semibold mb-4" />
               <p className="text-lg mb-6 text-muted-foreground">
                 I'm a full-stack developer with experience in building web
                 applications. I specialize in creating scalable,

@@ -3,11 +3,12 @@ import { useRoutes, Routes, Route } from "react-router-dom";
 import Home from "./components/home";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import CustomCursor from "./components/CustomCursor";
+import { LoaderFour } from "./components/ui/loader";
 
 function App() {
   return (
     <ThemeProvider>
-      <Suspense fallback={<p>Loading...</p>}>
+      <Suspense fallback={<LoaderFour />}>
         <>
           <Routes>
             <Route path="/" element={<Home />} />
