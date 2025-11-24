@@ -391,7 +391,7 @@ const Home = () => {
                   title: "Software Engineer Intern",
                   company: "Epam Systems",
                   companyLink: "https://www.epam.com/",
-                  period: "Feb 2023 - Mar 2024",
+                  period: "Jan 2025 - Jun 2025",
                   description:
                     "Developing and enhancing software solutions as part of a global engineering team. Gaining hands-on experience in real-world application development and best engineering practices.",
                   technologies: ["Machine Learning", "Python", "Research", "Web Development"],
@@ -401,7 +401,7 @@ const Home = () => {
                   title: "AWS Intern",
                   company: "APSSDC",
                   companyLink: "#",
-                  period: "2022 - Present",
+                  period: "Jun 2023 - Aug",
                   description:
                     "Working on cloud-based solutions as part of AWS-focused training and project work. Developing skills in deploying, managing, and monitoring applications using core AWS services.",
                   technologies: ["Leadership", "Event Management", "Communication"],
