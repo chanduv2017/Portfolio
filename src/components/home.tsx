@@ -401,7 +401,7 @@ const Home = () => {
                   title: "AWS Intern",
                   company: "APSSDC",
                   companyLink: "#",
-                  period: "Jun 2023 - Aug",
+                  period: "Jun 2023 - Aug 2023",
                   description:
                     "Working on cloud-based solutions as part of AWS-focused training and project work. Developing skills in deploying, managing, and monitoring applications using core AWS services.",
                   technologies: ["Leadership", "Event Management", "Communication"],
