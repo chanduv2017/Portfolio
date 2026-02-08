@@ -31,15 +31,14 @@ const ContactForm: React.FC = () => {
     setIsSubmitting(true);
 
     try {
-      const response = await fetch(import.meta.env.VITE_GOOGLE_SCRIPT_URL, {
+      const response = await fetch(import.meta.env.VITE_Form_Spree_URL, {
         method: "POST",
-        mode: "no-cors",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
+      console.log("Form submission response:", response);
       setIsSuccess(true);
       setFormData({ name: "", email: "", message: "" });
       

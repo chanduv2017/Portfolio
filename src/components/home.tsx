@@ -24,30 +24,61 @@ const Home = () => {
   // Skills data - Updated with icons
   const skills = [
     //https://github.com/devicons/devicon/blob/master/icons/
+    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" },
+    { name : "Redis", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"},
+    // { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg"},
+    { name:"Kubernetes", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg"},
+    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
     { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
     { name: "TypeScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
     { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
     { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
     { name: "C++", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" },
-    { name: "React", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+    {name: "C#", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"},
+    {name:".NET", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"},
+    // { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
+    
     { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
     { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
     { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
     { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "PostgreSQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-    { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
-    { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
-    { name: "AWS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-    { name: "Docker", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original-wordmark.svg" },
+    
+    // { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+    
+    // { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+    
+    
   ];
 
   // Projects data
   const projects = [
     {
       id: 1,
+      title: "Chronos : Distributed Job Scheduling Platform",
+      description:
+        "A Backend application built with Node.js, Redis and Docker",
+      image: "projectImg/Chronos.png",
+      technologies: [
+        "Node.js",
+        "Redis",
+        "Docker",
+        "PostgreSQL",
+        "TypeScript",
+      ],
+      liveDemo: "",
+      github: import.meta.env.VITE_GITHUB + "/Chronos-Distributed-Job-Scheduling-Platform",
+      fullDescription:
+        `Chronos is a fault-tolerant, distributed job scheduler built in Node.js that handles cron and 
+        delayed jobs at scale. It coordinates multiple workers using Redis Streams and PostgreSQL to 
+        reliably schedule and execute jobs in a horizontally scalable environment, even in the presence 
+        of worker or scheduler failures.`,
+    },
+    {
+      id: 2,
       title: "MenuMagic",
       description:
         "A full-stack Restaurant application built with React, Node.js, and MongoDB",
@@ -62,30 +93,33 @@ const Home = () => {
       liveDemo: "",
       github: import.meta.env.VITE_GITHUB + "/MenuMagic-Frontend",
       fullDescription:
-        "A full-featured food ordering application with user authentication, restaurant and menu browsing, real-time cart updates, secure checkout, and order tracking. Developed using React for the frontend, Node.js and Express for the backend API, and MongoDB for persistent data storage. Integrates payment gateways for seamless transactions and supports role-based access for customers, restaurant owners, and administrators.",
+        `A full-featured food ordering application with user authentication, restaurant and menu browsing, 
+        real-time cart updates, secure checkout, and order tracking. Developed using React for the frontend, 
+        Node.js and Express for the backend API, and MongoDB for persistent data storage. Integrates payment gateways 
+        for seamless transactions and supports role-based access for customers, restaurant owners, and administrators.`,
     },
+    // {
+    //   id: 2,
+    //   title: "LinguaLink",
+    //   description:
+    //     "A full stack web application for multilingual voice and text translation",
+    //   image: "projectImg/LinguaLink.png",
+    //   technologies: [
+    //     "React",
+    //     "Tailwind",
+    //     "MongoDB",
+    //     "Express.js",
+    //     "TypeScript",
+    //     "LLM",
+    //     "Flask",
+    //   ],
+    //   liveDemo: "",
+    //   github: import.meta.env.VITE_GITHUB + "/LinguaLink-Frontend",
+    //   fullDescription:
+    //     "LinguaLink is an innovative web application built using modern technologies like React, TypeScript, Node.js, MongoDB, and large language models (LLMs). The platform offers seamless voice and text translation services across up to four languages, making it an essential tool for cross-lingual communication. Users can interact with LinguaLink to either speak or type in one language and receive translations in their preferred output language, whether for personal, educational, or professional use.",
+    // },
     {
       id: 2,
-      title: "LinguaLink",
-      description:
-        "A full stack web application for multilingual voice and text translation",
-      image: "projectImg/LinguaLink.png",
-      technologies: [
-        "React",
-        "Tailwind",
-        "MongoDB",
-        "Express.js",
-        "TypeScript",
-        "LLM",
-        "Flask",
-      ],
-      liveDemo: "",
-      github: import.meta.env.VITE_GITHUB + "/LinguaLink-Frontend",
-      fullDescription:
-        "LinguaLink is an innovative web application built using modern technologies like React, TypeScript, Node.js, MongoDB, and large language models (LLMs). The platform offers seamless voice and text translation services across up to four languages, making it an essential tool for cross-lingual communication. Users can interact with LinguaLink to either speak or type in one language and receive translations in their preferred output language, whether for personal, educational, or professional use.",
-    },
-    {
-      id: 3,
       title: "Horizon",
       description:
         "A modern, scalable blog platform with a focus on performance and aesthetics",
@@ -102,7 +136,10 @@ const Home = () => {
       liveDemo: "https://horizon-frontend-ten.vercel.app/",
       github: import.meta.env.VITE_GITHUB + "/Horizon-Frontend",
       fullDescription:
-        "Horizon is a modern, scalable blog platform designed to provide users with a seamless content creation and reading experience. Built using a robust tech stack that includes React, Tailwind CSS, Cloudflare Workers, Hono web framework, Prisma ORM, PostgreSQL, and Node.js, Horizon focuses on delivering high performance, scalability, and aesthetic appeal.",
+        `Horizon is a modern, scalable blog platform designed to provide users with a seamless content 
+        creation and reading experience. Built using a robust tech stack that includes React, Tailwind CSS, 
+        Cloudflare Workers, Hono web framework, Prisma ORM, PostgreSQL, and Node.js, Horizon focuses on delivering 
+        high performance, scalability, and aesthetic appeal.`,
     }
   ];
 
@@ -217,21 +254,25 @@ const Home = () => {
                 </h3>
                 <p className="text-lg text-muted-foreground mb-4">Full-Stack Developer</p>
                 
-                <div className="space-y-4 text-muted-foreground">
+                <div className="space-y-3 text-muted-foreground">
                   <p className="text-base leading-relaxed">
-                    I'm a full-stack developer with experience in building scalable web
-                    applications. I specialize in creating high-performance solutions
-                    using modern technologies like React, Node.js, and cloud platforms.
+                    Associate Software Engineer (Backend) at Infor with experience building scalable, enterprise-grade 
+                    applications across backend and full-stack systems.
                   </p>
                   <p className="text-base leading-relaxed">
-                    My background includes work in e-commerce and AI-driven
-                    applications, where I've developed enterprise-scale solutions
-                    that serve thousands of users. I'm passionate about clean code,
-                    user experience, and staying on the cutting edge of technology.
+                    Skilled in .NET, C#, AWS, SQL, Python, and the MERN stack, with hands-on experience 
+                    designing RESTful APIs and microservices. Strong focus on performance, clean architecture, 
+                    and end-to-end feature ownership.
                   </p>
                   <p className="text-base leading-relaxed">
-                    When I'm not coding, you can find me travelling, reading tech blogs,
-                    or brainstorming new ideas for innovative projects.
+                    Previously a Software Engineering Intern at EPAM Systems, contributing to production-level 
+                    engineering work in collaborative, agile teams.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    • Solved 2000+ DSA problems across LeetCode, GFG, CodeChef, and Codeforces
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    • Strong foundation in data structures, algorithms, System Design and problem-solving
                   </p>
                 </div>
               </div>
@@ -384,17 +425,17 @@ const Home = () => {
                   period: "Sept 2025 - Present",
                   description:
                     "Contributing to the development and improvement of enterprise cloud applications at a leading global software solutions provider.",
-                  technologies: ["C#", ".NET", "PostgreSQL", "AWS"],
+                  technologies: ["C#", ".NET", "SQL Server", "AWS"],
                 },
                 {
-                  logo: "https://ik.imagekit.io/chanduv2017/epam_logo_light.svg",
+                  logo: "https://ik.imagekit.io/chanduv2017/EPAM-logo.webp",
                   title: "Software Engineer Intern",
                   company: "Epam Systems",
                   companyLink: "https://www.epam.com/",
                   period: "Jan 2025 - Jun 2025",
                   description:
                     "Developing and enhancing software solutions as part of a global engineering team. Gaining hands-on experience in real-world application development and best engineering practices.",
-                  technologies: ["Machine Learning", "Python", "Research", "Web Development"],
+                  technologies: ["React.js", "TypeScript", "Node.js", "Express.js", "MongoDB","Tailwind CSS"],
                 },
                 {
                   logo: "https://ik.imagekit.io/chanduv2017/apssdc.png",
@@ -404,7 +445,7 @@ const Home = () => {
                   period: "Jun 2023 - Aug 2023",
                   description:
                     "Working on cloud-based solutions as part of AWS-focused training and project work. Developing skills in deploying, managing, and monitoring applications using core AWS services.",
-                  technologies: ["Leadership", "Event Management", "Communication"],
+                  technologies: ["EC2", "S3", "Lambda", "CloudFormation", "AWS CLI", "Step Functions", "DynamoDB", "RDS", "VPC", "IAM", "CloudWatch"],
                 },
               ].map((item, index) => (
                 <motion.div
@@ -469,7 +510,7 @@ const Home = () => {
               {/* Education Items */}
               {[
                 {
-                  logo: "https://ik.imagekit.io/chanduv2017/srm-university-logo-1.png",
+                  logo: "https://ik.imagekit.io/chanduv2017/SRM-logo.jpg",
                   degree: "Bachelor of Technology - B.Tech, Computer Science",
                   institution: "SRM University, AP",
                   institutionLink: "https://srmap.edu.in",

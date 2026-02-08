@@ -59,9 +59,8 @@ const HeroSection: React.FC<HeroSectionProps> = ({ onViewWorkClick }) => {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-12 leading-relaxed"
         >
-          I craft elegant solutions to complex problems, specializing in modern
-          web technologies. From concept to deployment, I build scalable
-          applications that make a difference.
+          I build scalable, high-performance applications using modern backend and web technologies, focusing 
+          on clean architecture and real-world impact.
         </motion.p>
 
         {/* Enhanced CTA Buttons */}
